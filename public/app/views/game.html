@@ -1,0 +1,76 @@
+<div class="row">
+  <center><h1 class="title">Who's HOTTer?</h1>
+  <div class="col-md-12" ng-show="loader" >
+    <img src="/styles/495.GIF" class=""> <small>Loading...</small>
+  </div></center>
+</div>
+<div class="row">
+  <center>
+  <div class="col-md-4 col-md-offset-1 compare-photo frame" ng-repeat="c in compare"> 
+
+    <div class="col-md-12">
+      <div>
+        <center><h1 class="name">{{c.name}}, <small><strong class="text-orage">{{c.country}}</strong></small></h1></center>
+        <h6>
+          <a href="http://www.loveme.com/women/info{{c.id}}.htm" 
+              target="_blank" class="color-default" data-toggle="modal" data-target="#myModal">
+            Send her a message</a></h6>
+        <h6><a href="http://www.loveme.com/women/info{{c.id}}.htm" target="_blank" class="inline">
+          Know more about her</a></h6>
+      </div>
+      <center>
+        <img src="http://www.loveme.com/images/p{{c.id}}-1.jpg" class="frame" />
+        <p>{{p.name}}</p>
+        <p>{{p.country}}</p>
+        <div class="col-md-12">
+              <a href ng-click="nextCompare()" class="col-md-12 btn-orange">
+                <i class="fa fa-heart-o fa-2x"></i> <!-- "{{ c.name }}" from {{ c.country }} -->
+                <p>Like</p>
+              </a>              
+        </div>
+      </center>
+    </div>
+
+  </div>
+</center>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" my-modal id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->        
+        <h4 class="modal-title text-orage" id="myModalLabel">Send her a message</h4>
+      </div>
+      <div class="modal-body">
+        <div ng-show="messageSuccess">
+          <p>Message sent!</p>
+        </div>
+        <div ng-show="!messageSuccess">
+          <form ng-submit="sendMsg()">
+            <div class="form-group">
+              <label  for="email">Yout email address</label>
+              <input ng-model="frm.email" type="email" class="form-control" id="email" placeholder="Enter you email" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Message</label>
+              <textarea ng-model="frm.message" row="3" class="form-control" required></textarea>
+              <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div ng-show="!messageSuccess">
+          <div ng-show="!sendingMsg">
+            <button type="button" class="btn btn-default" ng-click="closeModel()">Close</button>
+            <button type="submit" class="btn btn-primary btn-send" ng-click="sendMessage()">Send</button>
+          </div>
+          <span ng-show="sendingMsg"><img src="/styles/495.GIF" width="16px" height="16px"> Sending message</span>
+          <span ng-show="sentMsg">Message sent!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

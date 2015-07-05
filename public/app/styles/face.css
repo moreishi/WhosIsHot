@@ -1,0 +1,70 @@
+.title {
+  font-family: 'Lobster', cursive;
+  color: #ff6600;
+}
+
+.name {
+  font-family: 'Poiret One', cursive;
+  color: #a0a0a0;
+}
+
+.compare-photo {
+  min-height: 550px;
+  padding-bottom: 40px;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+.btn-orange {
+  border: none;
+}
+
+.btn-orange:hover {
+  border: none;
+}
+
+.btn-send {
+  border: none;
+  background-color: #ff6600;
+}
+.btn-send:hover {
+  border: none;
+  background-color: #ff6600;
+}
+
+.frame {
+  box-shadow: 3px 3px 5px 3px #f0f0f0;
+  margin-top: 15px;
+}
+
+a {
+  display: inline;
+  color: #ff6600;
+}
+
+a:hover {
+  color: #f36100;
+  text-decoration: none;
+};
+
+.inline {
+  display: inline;
+}
+
+.border-orange {
+  border: 3px #a0a0a0 solid;
+}
+
+.color-default {
+  color: #a0a0a0;
+}
+
+.color-black {
+  color: #000000;
+}
+
+.text-orage {
+  color: #ff6600;
+}
